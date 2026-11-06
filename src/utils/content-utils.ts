@@ -35,7 +35,7 @@ const warnedUnknownSeries = new Set<string>();
 // // Retrieve posts and sort them by publication date
 async function getRawSortedPosts(): Promise<CollectionEntry<"posts">[]> {
 	const allBlogPosts = await getCollection("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
+		return data.draft !== true;
 	});
 
 	for (const post of allBlogPosts) validatePublicationMetadata(post);
@@ -116,7 +116,7 @@ export type Tag = {
 
 export async function getTagList(): Promise<Tag[]> {
 	const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
+		return data.draft !== true;
 	});
 
 	const countMap: { [key: string]: number } = {};
@@ -143,7 +143,7 @@ export type Category = {
 
 export async function getCategoryList(): Promise<Category[]> {
 	const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
+		return data.draft !== true;
 	});
 	const seriesCatalog = await getSeriesCatalog();
 	const count: { [key: string]: number } = {};
@@ -246,7 +246,7 @@ function withMomentThumbnails(image: MomentImage): MomentImage {
 
 export async function getSortedMoments(): Promise<MomentItem[]> {
 	const entries = await getCollection("moments", ({ data }) => {
-		return import.meta.env.PROD ? data.draft !== true : true;
+		return data.draft !== true;
 	});
 
 	const sorted = entries.sort(comparePublicationEntries);

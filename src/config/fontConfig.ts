@@ -43,7 +43,7 @@ export const fontConfig: FontConfig = withUserConfig("font", {
 	 * - `"custom"`: 启用自定义字体（加载下方 fontFamilies 中配置的字体）
 	 * - `"system"`: 纯系统字体模式（不打包任何自定义字体文件，完全依赖访客设备）
 	 */
-	mode: "custom",
+	mode: "system", // 临时回退到系统字体，规避 Astro 7 Capsize 远程 metrics 拉取导致的 dev server 崩溃。网络恢复后可切回 "custom"
 
 	/**
 	 * 字体清单列表（按需配置 body、cjk、mono、mono-cjk 角色）

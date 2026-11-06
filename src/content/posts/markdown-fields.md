@@ -1,12 +1,11 @@
 ---
-title: Markdown Field Cards
-description: API and component parameter documentation cards.
+title: Markdown 字段卡片
+description: API 与组件参数文档卡片。
 published: 2026-08-30
-category: Guides
+category: 指南
 draft: true
 ---
-
-Use `field-group` when several related options belong to the same API or component. Put the field name on the opening line, then add metadata tags before the description.
+当多个相关选项属于同一个 API 或组件时，使用 `field-group`。把字段名写在起始行，然后在描述之前添加元数据标签。
 
 :::: field-group
 
@@ -14,7 +13,7 @@ Use `field-group` when several related options belong to the same API or compone
 @type object
 @optional
 
-TeX parser options.
+TeX 解析器选项。
 :::
 
 ::: field output
@@ -22,14 +21,14 @@ TeX parser options.
 @default `'svg'`
 @optional
 
-Output format, SVG or generic HTML.
+输出格式，SVG 或通用 HTML。
 :::
 
 ::::
 
-## Basic Fields
+## 基础字段
 
-Required, optional, and deprecated statuses can be mixed in one group. Default values are kept separate from the type so they remain easy to scan.
+必填、可选和已弃用的状态可以在同一组中混用。默认值会与类型分开显示，以便快速浏览。
 
 :::: field-group
 
@@ -37,7 +36,7 @@ Required, optional, and deprecated statuses can be mixed in one group. Default v
 @type string
 @required
 
-The visible title of the component. This value is shown in the page heading and should be short enough to scan quickly.
+组件的可见标题。该值会显示在页面标题中，应当简短，便于快速浏览。
 :::
 
 ::: field disabled
@@ -45,7 +44,7 @@ The visible title of the component. This value is shown in the page heading and 
 @default `false`
 @optional
 
-Whether the control starts in a disabled state.
+控件是否以禁用状态启动。
 :::
 
 ::: field locale
@@ -53,14 +52,14 @@ Whether the control starts in a disabled state.
 @default `'en'`
 @optional
 
-Locale used for formatting dates, numbers, and accessible labels.
+用于格式化日期、数字和无障碍标签的区域设置。
 :::
 
 ::::
 
-## Rich Descriptions
+## 富文本描述
 
-Descriptions are ordinary Markdown. Links, emphasis, lists, and inline code remain available after the metadata lines.
+描述就是普通的 Markdown。元数据行之后仍可使用链接、强调、列表和行内代码。
 
 :::: field-group
 
@@ -68,10 +67,10 @@ Descriptions are ordinary Markdown. Links, emphasis, lists, and inline code rema
 @type `(value: unknown) => string`
 @required
 
-Render a value into the final output. The callback should return a **safe string** and may use the `formatValue` helper.
+将值渲染为最终输出。回调应返回**安全字符串**，并可使用 `formatValue` 辅助函数。
 
-- Keep rendering deterministic.
-- Avoid network requests inside the callback.
+- 保持渲染的确定性。
+- 避免在回调中发起网络请求。
 :::
 
 ::: field retries
@@ -79,33 +78,33 @@ Render a value into the final output. The callback should return a **safe string
 @default `3`
 @optional
 
-Maximum number of attempts before the request is reported as failed.
+请求被报告为失败之前的最大尝试次数。
 :::
 
 ::: field legacyMode
 @type boolean
 @deprecated
 
-Kept for backwards compatibility. New integrations should use `compatibility` instead.
+为向后兼容而保留。新的集成应改用 `compatibility`。
 :::
 
 ::::
 
-## Standalone Field
+## 独立字段
 
-A single field can be used without a group when documenting one option next to an example or code block.
+在示例或代码块旁记录单个选项时，可以不使用分组而单独使用一个字段。
 
 ::: field format
 @type `'short' | 'long'`
 @default `'short'`
 @optional
 
-Controls how the result is formatted.
+控制结果的格式化方式。
 :::
 
-## Authoring Notes
+## 编写说明
 
-- `@type` and `@default` values are rendered as code tokens.
-- `@required`, `@optional`, and `@deprecated` add a status badge.
-- Any normal Markdown after the metadata becomes the field description.
-- Unknown `@tags` remain visible as description text instead of being discarded.
+- `@type` 和 `@default` 的取值会渲染为代码标记。
+- `@required`、`@optional` 和 `@deprecated` 会添加状态徽章。
+- 元数据之后的任何普通 Markdown 都会成为字段描述。
+- 无法识别的 `@tags` 会作为描述文本保留下来，而不会被丢弃。

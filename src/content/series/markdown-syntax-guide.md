@@ -1,16 +1,13 @@
 ---
-title: Markdown Syntax Guide
+title: Markdown 语法指南
 status: completed
-defaultCategory: Guides
+defaultCategory: 指南
 ---
 
-A guided walk through Shirone's Markdown capabilities, from the plain syntax
-basics to the theme-specific extensions.
+一篇带你走完 Shirone Markdown 能力的引导，从基础语法一直到主题专属扩展。
 
-- **Part 1** starts with the vanilla Markdown syntax every post supports.
-- **Part 2** covers the extended features on top of it.
-- **Part 3** dives into Shirone's own enhancements (admonitions, content
-  annotations, and the other M3E containers).
+- **第一部分** 从每篇文章都支持的原生 Markdown 语法讲起。
+- **第二部分** 介绍在其之上扩展的功能。
+- **第三部分** 深入 Shirone 自有的增强能力（提示容器、内容标注以及其它 M3E 容器）。
 
-The series is **completed**. Note that `defaultCategory` only acts as a
-fallback: a post may still declare its own explicit `category` to override it.
+该系列已**完结**。请注意 `defaultCategory` 只作为兜底：文章仍可声明自己的 `category` 来覆盖它。

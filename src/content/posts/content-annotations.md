@@ -1,50 +1,49 @@
 ---
-title: Content Annotations
+title: 内容注解
 published: 2026-08-27
-description: Add compact, accessible supporting notes to Shirone articles without interrupting the reading flow.
-tags: [Demo, Markdown, Annotation, Shirone]
-category: Guides
+description: 为 Shirone 文章添加紧凑、无障碍的辅助注释，而不打断阅读节奏。
+tags: [演示, Markdown, 内容标注, Shirone]
+category: 指南
 lang: en
-draft: false
+draft: true
 ---
+内容注解让辅助上下文紧贴某句话，而不必直接插入阅读流中。激活那个小小的注释标记，即可展开其内容。
 
-Content annotations keep supporting context close to a sentence without placing it directly in the reading flow. Activate the small note marker to reveal its content.
+## 基本语法
 
-## Basic syntax
-
-Add a `[+label]` reference in ordinary prose, then define the matching note elsewhere in the same article.
+在普通行文中添加一个 `[+label]` 引用，然后在同一篇文章的其他位置定义匹配的注释。
 
 ```markdown
-Astro renders most of a page ahead of time and hydrates **interactive islands** [+islands] only when they need to become interactive.
+Astro 会提前渲染页面的大部分内容，只在 **交互式孤岛** [+islands] 需要变为可交互时才对其进行水合。
 
 [+islands]:
-  An island is an interactive UI component surrounded by static HTML. This keeps the default page lightweight while preserving focused interactivity.
+  孤岛是被静态 HTML 包围的交互式 UI 组件。这样既保持了页面的轻量默认状态，又保留了聚焦的交互性。
 ```
 
-Astro renders most of a page ahead of time and hydrates **interactive islands** [+islands] only when they need to become interactive.
+Astro 会提前渲染页面的大部分内容，只在 **交互式孤岛** [+islands] 需要变为可交互时才对其进行水合。
 
 [+islands]:
-  An island is an interactive UI component surrounded by static HTML. This keeps the default page lightweight while preserving focused interactivity.
+  孤岛是被静态 HTML 包围的交互式 UI 组件。这样既保持了页面的轻量默认状态，又保留了聚焦的交互性。
 
-## Rich content
+## 富内容
 
-Definitions may contain paragraphs, emphasis, links, lists, and inline code [+rich-note] while the surrounding sentence continues normally.
+定义中可以包含段落、强调、链接、列表与行内代码 [+rich-note]，而周围的句子仍照常继续。
 
 [+rich-note]:
-  **Authoring guidance**
+  **撰写建议**
 
-  - Keep the first sentence self-contained.
-  - Use a link when readers may need the primary source.
-  - Prefer concise examples such as `client:visible`.
+  - 让第一句话自身完整成立。
+  - 当读者可能需要原始出处时，使用链接。
+  - 优先使用 `client:visible` 这类简洁示例。
 
-  See the [Astro islands documentation](https://docs.astro.build/en/concepts/islands/) for the full model.
+  完整模型请参阅 [Astro 孤岛文档](https://docs.astro.build/en/concepts/islands/)。
 
-## Multiple definitions
+## 多重定义
 
-Reuse a label [+review] to present a short sequence of related notes behind one marker.
+复用同一个标签 [+review]，可以在一个标记后呈现一串相关的短注释。
 
-[+review]: Start with the decision that changes the reader's next action.
-[+review]: Keep implementation evidence separate from background context.
-[+review]: Remove details that belong in the main article instead of the annotation.
+[+review]: 先写下那条会改变读者下一步行动的决策。
+[+review]: 将实现证据与背景上下文分开。
+[+review]: 删除本应属于正文而非注解的细节。
 
-Undefined references such as `[+missing]` remain ordinary text, so an unfinished definition never creates an empty control.
+未定义的引用（例如 `[+missing]`）会保留为普通文本，因此未写完的定义永远不会产生一个空的控件。

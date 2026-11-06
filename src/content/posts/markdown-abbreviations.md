@@ -1,37 +1,36 @@
 ---
-title: Markdown Abbreviations
+title: Markdown 缩写
 published: 2026-08-28
-description: Define common acronyms once and keep their full meaning available in normal article text.
-tags: [Demo, Markdown, Typography, Shirone]
-category: Guides
+description: 只需定义一次常见缩写，即可在正文中随时查看其完整含义。
+tags: [演示, Markdown, 排版, Shirone]
+category: 指南
 lang: en
-draft: false
+draft: true
 ---
+缩写让技术写作更紧凑，同时为需要的读者保留完整术语。已定义的术语会渲染为原生 `abbr` 元素，悬停时可查看其含义，辅助技术同样可以读取。
 
-Abbreviations keep technical writing compact while preserving the full term for readers who need it. A defined term renders as a native `abbr` element with its meaning available on hover and to assistive technology.
+## 应用场景
 
-## In context
+SSR 优先的输出，能在 JavaScript 运行之前保持初始文档可见。衡量其阅读体验时，LCP 和 CLS 能反映首个可见内容是否快速且稳定。
 
-SSR-first output keeps the initial document visible before JavaScript runs. When measuring its reading experience, LCP and CLS reveal whether the first visible content is fast and stable.
+缩写也可以与普通 Markdown 一起出现，例如 **SSR** 相关的说明，但 `SSR` 这样的字面代码以及 [LCP 文档](https://web.dev/articles/lcp) 这类链接会保持原样。
 
-An abbreviation can also appear next to ordinary Markdown such as **SSR** guidance, but literal code such as `SSR` and links like [LCP documentation](https://web.dev/articles/lcp) remain untouched.
+## 定义术语
 
-## Define terms
-
-Place definitions anywhere in the same Markdown document. They do not render as visible paragraphs, and only matching terms in that article receive the semantic abbreviation treatment.
+定义可以放在同一 Markdown 文档的任意位置。它们不会渲染为可见段落，而且只有该文章内匹配的术语才会获得语义化缩写处理。
 
 ```markdown
-*[SSR]: Server-Side Rendering
-*[LCP]: Largest Contentful Paint
-*[CLS]: Cumulative Layout Shift
+*[SSR]: 服务端渲染
+*[LCP]: 最大内容绘制
+*[CLS]: 累积布局偏移
 
-SSR makes an HTML response available before client code runs.
+SSR 让 HTML 响应在客户端代码运行之前就可以获取。
 ```
 
-*[SSR]: Server-Side Rendering
-*[LCP]: Largest Contentful Paint
-*[CLS]: Cumulative Layout Shift
+*[SSR]: 服务端渲染
+*[LCP]: 最大内容绘制
+*[CLS]: 累积布局偏移
 
-## Authoring boundaries
+## 编写边界
 
-Terms must begin with a letter or number and may contain letters, numbers, periods, underscores, plus signs, and hyphens. Each definition applies to the current article only; an invalid or duplicate definition remains ordinary Markdown instead of silently replacing another term.
+术语必须以字母或数字开头，并且可以包含字母、数字、句点、下划线、加号和连字符。每个定义仅对当前文章生效；无效或重复的定义会保持为普通 Markdown，而不会悄悄替换另一个术语。
