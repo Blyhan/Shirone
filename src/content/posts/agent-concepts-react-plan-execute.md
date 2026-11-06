@@ -5,12 +5,6 @@ description: 从 ReAct（Thought → Action → Observation → Final Answer）�
 tags: [AI, Agent, LLM, ReAct]
 category: AI
 ---
-
-<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:24px;">
-  <button style="padding:8px 20px; background:var(--theme-color); color:#fff; border:none; border-radius:8px; cursor:pointer; font-size:14px;">Agent 工作模式</button>
-  <img src="/images/agent-concept.jpg" alt="Agent 概念示意图" style="max-width:320px; border-radius:8px;" />
-</div>
-
 ## 典型的 Agent
 
 **ex.1 Cursor** — 一个用于编程的 Agent，我们只需要给它提交任务，它便会调用大模型和各种工具来帮我们写代码，直至完成任务。
