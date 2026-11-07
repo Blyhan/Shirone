@@ -111,12 +111,16 @@ function resolveLocalPhotoFiles(albumDir: string): string[] {
 }
 
 function localPhotos(albumId: string, albumDir: string): AlbumPhoto[] {
+	const thumbDir = path.join(albumDir, "thumbs");
 	return resolveLocalPhotoFiles(albumDir).map((fileName, index) => {
 		const parsed = parseFileName(fileName);
 		const relative = `${albumId}/${fileName}`;
+		const thumbRelative = `${albumId}/thumbs/${fileName}`;
+		const hasThumb = fs.existsSync(path.join(thumbDir, fileName));
 		return {
 			id: `${albumId}-photo-${index + 1}`,
 			src: toPublicPath(relative),
+			thumbnail: hasThumb ? toPublicPath(thumbRelative) : undefined,
 			alt: parsed.title,
 			title: parsed.title,
 			tags: parsed.tags,
