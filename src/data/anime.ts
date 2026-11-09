@@ -110,4 +110,17 @@ export const animeData: AnimeItem[] = [
 		genres: ["Daily life", "Healing", "Magic"],
 		period: { start: "2025-07", end: "2025-10" },
 	},
+	{
+		title: "Love, Chunibyo & Other Delusions: Heart Throb",
+		cover: "/assets/anime/zeb.webp",
+		link: "https://www.bilibili.com/bangumi/media/md4349",
+		status: "completed",
+		rating: 9.6,
+		progress: { watched: 13, total: 13 },
+		description: "Chuunibyou never graduates",
+		year: "2014",
+		studio: "Kyoto Animation",
+		genres: ["Romance", "Comedy", "School"],
+		period: { start: "2014-01", end: "2014-03" },
+	},
 ];
