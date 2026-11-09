@@ -59,7 +59,7 @@ export const animeData: AnimeItem[] = [
 		period: { start: "2022-07", end: "2022-09" },
 	},
 	{
-		title: "飙速宅男",
+		title: "若叶女孩",
 		cover: "/assets/anime/rynh.webp",
 		link: "https://www.bilibili.com/bangumi/media/md2590",
 		status: "watching",
@@ -98,7 +98,7 @@ export const animeData: AnimeItem[] = [
 		period: { start: "2014-04", end: "2014-06" },
 	},
 	{
-		title: "魔法少女的秘密",
+		title: "沉默魔女的秘密",
 		cover: "/assets/anime/cmmn.webp",
 		link: "https://www.bilibili.com/bangumi/media/md26625039",
 		status: "watching",
